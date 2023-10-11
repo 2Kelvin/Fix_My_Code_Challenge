@@ -10,9 +10,9 @@ class Square():
     def __init__(self, *args, **kwargs):
         """ Init Square method to create square instances """
         for key, value in kwargs.items():
-            if key == 'height':
-                value = kwargs['width']
             setattr(self, key, value)
+        if self.width != self.height:
+            self.height = self.width
 
     def area_of_my_square(self):
         """ Area of the square """
@@ -20,7 +20,7 @@ class Square():
 
     def permiterOfMySquare(self):
         """ Calculates the perimeter of a square """
-        return (self.width * 2) + (self.height * 2)
+        return (self.width * 4)
 
     def __str__(self):
         """ Custom string object """
