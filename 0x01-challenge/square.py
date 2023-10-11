@@ -11,7 +11,7 @@ class Square():
         """ Init Square method to create square instances """
         for key, value in kwargs.items():
             setattr(self, key, value)
-        if self.width != self.height:
+        if not hasattr(self, "height"):
             self.height = self.width
 
     def area_of_my_square(self):
@@ -33,3 +33,4 @@ if __name__ == "__main__":
     print(s)
     print(s.area_of_my_square())
     print(s.permiterOfMySquare())
+
